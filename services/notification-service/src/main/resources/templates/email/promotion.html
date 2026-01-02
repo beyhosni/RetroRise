@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Promotion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .promo-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .promo-code {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+            letter-spacing: 2px;
+            background-color: white;
+            color: #e74c3c;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+        .button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .terms {
+            font-size: 11px;
+            color: #777;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RetroRise</h1>
+        <p>Your Premium Sneaker Destination</p>
+    </div>
+
+    <div class="content">
+        <h2>Special Offer Just For You!</h2>
+        <p>Dear <span th:text="${recipientName}">Sneaker Enthusiast</span>,</p>
+        <p>We have an exclusive promotion just for you!</p>
+
+        <div class="promo-box">
+            <p>Use this code at checkout to save on your next purchase:</p>
+            <div class="promo-code" th:text="${notification.title}">SAVE20</div>
+        </div>
+
+        <p><strong>Promotion Details:</strong></p>
+        <p th:text="${notification.content}">Get 20% off your next purchase of limited edition sneakers. Valid for one week only.</p>
+
+        <p>Don't miss out on this opportunity to grab your favorite kicks at a discount!</p>
+
+        <a href="https://retrorise.com/shop" class="button">Shop Now</a>
+
+        <div class="terms">
+            <p><strong>Terms and Conditions:</strong> This promotion is valid for one week from the date of this email. Cannot be combined with other offers. One use per customer. Excludes already discounted items.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 RetroRise. All rights reserved.</p>
+        <p>If you have any questions, please contact our customer service at support@retrorise.com</p>
+    </div>
+</body>
+</html>

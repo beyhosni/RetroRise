@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Access Started</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .early-access-badge {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .drop-details {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+        .button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .vip {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RetroRise</h1>
+        <p>Your Premium Sneaker Destination</p>
+    </div>
+
+    <div class="content">
+        <div class="early-access-badge">EARLY ACCESS</div>
+        <h2>Early Access Started!</h2>
+        <p>Dear <span th:text="${recipientName}">VIP Member</span>,</p>
+        <p class="vip">As a valued member, you have exclusive early access to our latest drop!</p>
+
+        <div class="drop-details">
+            <p><strong>Drop Name:</strong> <span th:text="${notification.title}">New Drop</span></p>
+            <p><strong>Early Access Period:</strong> <span th:text="${#temporals.format(notification.createdAt, 'MMMM dd, yyyy')}">January 1, 2023</span></p>
+            <p><strong>Drop Details:</strong> <span th:text="${notification.content}">Limited edition sneakers</span></p>
+        </div>
+
+        <p>Take advantage of your exclusive early access to secure your pair before the general public!</p>
+
+        <a href="https://retrorise.com/drops" class="button">Shop Now</a>
+
+        <p class="vip">Your early access is valid for 24 hours before the drop opens to the public.</p>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 RetroRise. All rights reserved.</p>
+        <p>If you have any questions, please contact our customer service at support@retrorise.com</p>
+    </div>
+</body>
+</html>
