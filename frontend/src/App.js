@@ -14,6 +14,7 @@ import Drops from './pages/Drops';
 import Brands from './pages/Brands';
 import BrandDetail from './pages/BrandDetail';
 import ProductDetail from './pages/ProductDetail';
+import Products from './pages/Products';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
@@ -24,6 +25,9 @@ import OrderConfirmation from './pages/customer/OrderConfirmation';
 import Orders from './pages/customer/Orders';
 import OrderDetail from './pages/customer/OrderDetail';
 import Profile from './pages/customer/Profile';
+import Favorites from './pages/customer/Favorites';
+import Wishlist from './pages/customer/Wishlist';
+import Comparison from './pages/customer/Comparison';
 
 // Admin pages
 import AdminDashboard from './pages/admin/Dashboard';
@@ -89,6 +93,7 @@ function App() {
       <Route path="/drops" element={<Layout><Drops /></Layout>} />
       <Route path="/brands" element={<Layout><Brands /></Layout>} />
       <Route path="/brands/:id" element={<Layout><BrandDetail /></Layout>} />
+      <Route path="/products" element={<Layout><Products /></Layout>} />
       <Route path="/products/:id" element={<Layout><ProductDetail /></Layout>} />
 
       {/* Auth routes */}
@@ -124,6 +129,21 @@ function App() {
       <Route path="/profile" element={
         <ProtectedRoute>
           <Layout><Profile /></Layout>
+        </ProtectedRoute>
+      } />
+      <Route path="/favorites" element={
+        <ProtectedRoute>
+          <Layout><Favorites /></Layout>
+        </ProtectedRoute>
+      } />
+      <Route path="/wishlist" element={
+        <ProtectedRoute>
+          <Layout><Wishlist /></Layout>
+        </ProtectedRoute>
+      } />
+      <Route path="/comparison" element={
+        <ProtectedRoute>
+          <Layout><Comparison /></Layout>
         </ProtectedRoute>
       } />
 
